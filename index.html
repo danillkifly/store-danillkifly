@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>McDonald's Promo</title>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans bg-white">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 left-0 w-full flex items-center justify-between px-4 py-3 shadow-md z-50 bg-white"
+    >
+      <img src="img/i.jpg" alt="Logo" class="h-12 lg:h-16" />
+
+      <!-- Toggle button (1 tombol untuk open/close) -->
+      <button id="menu-toggle" class="lg:hidden">
+        <i id="menu-icon" class="fa-solid fa-bars-staggered text-xl"></i>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex space-x-6 items-center">
+        <a href="#" class="text-gray-700 hover:text-yellow-300">
+          Menu <i class="fa-solid fa-angle-down text-yellow-300"></i>
+        </a>
+        <a href="#" class="text-gray-700 hover:text-yellow-300">Promo</a>
+        <a href="#" class="text-gray-700 hover:text-yellow-300">Dunia Anak</a>
+        <a href="#" class="text-gray-700 hover:text-yellow-300"
+          >Berita Terkini</a
+        >
+        <a href="#" class="text-gray-700 hover:text-yellow-300"
+          >Makin Kenal Makin Sayang</a
+        >
+        <a href="#" class="text-gray-700 hover:text-yellow-300">Lokasi</a>
+      </nav>
+    </header>
+
+    <main class="pt-20">
+      <!-- Slide-in Mobile Nav -->
+      <div
+        id="mobile-nav"
+        class="pt-20 fixed top-0 left-0 w-full h-full bg-white transform -translate-x-full transition-transform duration-300 ease-in-out z-40 lg:hidden flex flex-col p-6 space-y-6 text-lg"
+      >
+        <a href="#" class="text-gray-800 hover:text-yellow-400">Menu</a>
+        <a href="#" class="text-gray-800 hover:text-yellow-400">Promo</a>
+        <a href="#" class="text-gray-800 hover:text-yellow-400">Dunia Anak</a>
+        <a href="#" class="text-gray-800 hover:text-yellow-400"
+          >Berita Terkini</a
+        >
+        <a href="#" class="text-gray-800 hover:text-yellow-400"
+          >Makin Kenal Makin Sayang</a
+        >
+        <a href="#" class="text-gray-800 hover:text-yellow-400">Lokasi</a>
+      </div>
+
+      <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const menuIcon = document.getElementById("menu-icon");
+        const mobileNav = document.getElementById("mobile-nav");
+
+        let isOpen = false;
+
+        menuToggle.addEventListener("click", () => {
+          isOpen = !isOpen;
+
+          // Toggle nav
+          mobileNav.classList.toggle("-translate-x-full");
+
+          // Toggle icon
+          if (isOpen) {
+            menuIcon.classList.replace("fa-bars-staggered", "fa-xmark");
+          } else {
+            menuIcon.classList.replace("fa-xmark", "fa-bars-staggered");
+          }
+        });
+      </script>
+
+      <!-- Hero Promo -->
+      <section class="w-full">
+        <div class="relative overflow-hidden">
+          <!-- Slider wrapper -->
+          <div
+            id="carousel"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
+            <img
+              src="img/1325614.jpeg"
+              alt="Student Promo 1"
+              class="w-full h-[550px] object-cover flex-shrink-0"
+            />
+            <img
+              src="img/1325614.jpeg"
+              alt="Student Promo 2"
+              class="w-full h-[550px] object-cover flex-shrink-0"
+            />
+            <img
+              src="img/1325614.jpeg"
+              alt="Student Promo 3"
+              class="w-full h-[550px] object-cover flex-shrink-0"
+            />
+          </div>
+
+          <!-- Navigation buttons -->
+          <button
+            onclick="prevSlide()"
+            class="w-10 h-10 absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow hover:bg-gray-100"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            onclick="nextSlide()"
+            class="w-10 h-10 absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow hover:bg-gray-100"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- JavaScript for Carousel -->
+      <script>
+        let currentSlide = 0;
+        const carousel = document.getElementById("carousel");
+        const totalSlides = 3;
+
+        function updateSlide() {
+          carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateSlide();
+        }
+
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+          updateSlide();
+        }
+
+        // Enable swipe with Hammer.js
+        const hammer = new Hammer(carousel);
+        hammer.on("swipeleft", () => nextSlide());
+        hammer.on("swiperight", () => prevSlide());
+      </script>
+
+      <!-- Promo Menarik -->
+      <section class="px-4 py-8 max-w-screen-xl mx-auto">
+        <h2 class="text-xl uppercase font-bold text-center mb-6">
+          Promo Menarik
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Promo 1 -->
+          <a href="#"
+            ><div class="shadow-lg rounded-lg overflow-hidden">
+              <img src="img/1325614.jpeg" alt="Promo BCA" />
+              <div class="p-4">
+                <h3 class="font-bold">BCA Hemat 25% Setiap Hari</h3>
+                <p class="text-sm text-gray-600 flex items-center mt-2">
+                  <i class="fa-regular fa-calendar-days mr-2"></i>
+                  Berlaku hingga 30 June 2025
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Promo 2 -->
+          <a href="#">
+            <div class="shadow-lg rounded-lg overflow-hidden">
+              <img src="img/1325614.jpeg" alt="Dino McFlurry" />
+              <div class="p-4">
+                <h3 class="font-bold">Dinosaur McFlurry</h3>
+                <p class="text-sm text-gray-600 flex items-center mt-2">
+                  <i class="fa-regular fa-calendar-days mr-2"></i>
+                  Berlaku hingga 01 June 2025
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Promo 3 -->
+          <a href="#">
+            <div class="shadow-lg rounded-lg overflow-hidden">
+              <img src="img/1325614.jpeg" alt="Promo McDelivery" />
+              <div class="p-4">
+                <h3 class="font-bold">Rebo Hemat dengan McDelivery</h3>
+                <p class="text-sm text-gray-600 flex items-center mt-2">
+                  <i class="fa-regular fa-calendar-days mr-2"></i>
+                  Berlaku hingga 28 May 2025
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="text-center mt-8">
+          <button
+            class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700"
+          >
+            Lihat Semua Promo
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://kit.fontawesome.com/2c1928f692.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
