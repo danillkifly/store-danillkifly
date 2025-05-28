@@ -40,7 +40,7 @@
       </nav>
     </header>
 
-    <main class="pt-20">
+    <main class="pt-32">
       <!-- Slide-in Mobile Nav -->
       <div
         id="mobile-nav"
@@ -81,8 +81,8 @@
       </script>
 
       <!-- Hero Promo -->
-      <section class="w-full">
-        <div class="relative overflow-hidden">
+      <div class="w-full">
+        <div class="relative overflow-hidden mb-12">
           <!-- Slider wrapper -->
           <div
             id="carousel"
@@ -119,7 +119,7 @@
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
-      </section>
+      </div>
 
       <!-- JavaScript for Carousel -->
       <script>
@@ -148,62 +148,232 @@
       </script>
 
       <!-- Promo Menarik -->
-      <section class="px-4 py-8 max-w-screen-xl mx-auto">
-        <h2 class="text-xl uppercase font-bold text-center mb-6">
+      <div class="px-4 py-16 max-w-screen-xl mx-auto">
+        <h1 class="lg:text-[2.5em] text-[1.4em] font-bold text-center mb-10">
           Promo Menarik
-        </h2>
+        </h1>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Promo 1 -->
-          <a href="#"
-            ><div class="shadow-lg rounded-lg overflow-hidden">
-              <img src="img/1325614.jpeg" alt="Promo BCA" />
-              <div class="p-4">
-                <h3 class="font-bold">Hemat 25% Setiap Hari</h3>
-                <p class="text-sm text-gray-600 flex items-center mt-2">
-                  <i class="fa-regular fa-calendar-days mr-2"></i>
-                  Berlaku hingga 30 June 2025
-                </p>
+        <!-- Slider Container -->
+        <div class="relative">
+          <!-- Scrollable Area -->
+          <div
+            id="promoSlider"
+            class="flex overflow-x-auto scroll-smooth space-x-4 pb-4 snap-x snap-mandatory"
+            style="scrollbar-width: none"
+          >
+            <style>
+              #promoSlider::-webkit-scrollbar {
+                display: none; /* Chrome, Safari */
+              }
+            </style>
+            <!-- Ulangi setiap kartu -->
+            <a href="">
+              <div
+                class="snap-start shrink-0 w-[360px] rounded-lg shadow-md bg-white"
+              >
+                <img
+                  src="img/1325614.jpeg"
+                  alt="Promo BCA"
+                  class="w-full h-[200px] object-cover rounded-t-lg"
+                />
+                <div class="p-3">
+                  <h3 class="font-bold text-sm">BCA Hemat 25% Setiap Hari</h3>
+                  <p class="text-xs text-gray-600 mt-1 flex items-center">
+                    <i
+                      class="fa-regular fa-calendar-days mr-2 text-red-500"
+                    ></i>
+                    Berlaku hingga 30 June 2025
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
-
-          <!-- Promo 2 -->
-          <a href="#">
-            <div class="shadow-lg rounded-lg overflow-hidden">
-              <img src="img/1325614.jpeg" alt="zzzZZ" />
-              <div class="p-4">
-                <h3 class="font-bold">Dinosaur McFlurry</h3>
-                <p class="text-sm text-gray-600 flex items-center mt-2">
-                  <i class="fa-regular fa-calendar-days mr-2"></i>
-                  Berlaku hingga 01 June 2025
-                </p>
+            </a>
+            <a href="">
+              <div
+                class="snap-start shrink-0 w-[360px] rounded-lg shadow-md bg-white"
+              >
+                <img
+                  src="img/1325614.jpeg"
+                  alt="Dinosaur"
+                  class="w-full h-[200px] object-cover rounded-t-lg"
+                />
+                <div class="p-3">
+                  <h3 class="font-bold text-sm">Dinosaur McFlurry</h3>
+                  <p class="text-xs text-gray-600 mt-1 flex items-center">
+                    <i
+                      class="fa-regular fa-calendar-days mr-2 text-red-500"
+                    ></i>
+                    Berlaku hingga 01 June 2025
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
-
-          <!-- Promo 3 -->
-          <a href="#">
-            <div class="shadow-lg rounded-lg overflow-hidden">
-              <img src="img/1325614.jpeg" alt="zzzZZ" />
-              <div class="p-4">
-                <h3 class="font-bold">Rebo Hemat dengan McDelivery</h3>
-                <p class="text-sm text-gray-600 flex items-center mt-2">
-                  <i class="fa-regular fa-calendar-days mr-2"></i>
-                  Berlaku hingga 28 May 2025
-                </p>
+            </a>
+            <a href="">
+              <div
+                class="snap-start shrink-0 w-[360px] rounded-lg shadow-md bg-white"
+              >
+                <img
+                  src="img/1325614.jpeg"
+                  alt="McDelivery"
+                  class="w-full h-[200px] object-cover rounded-t-lg"
+                />
+                <div class="p-3">
+                  <h3 class="font-bold text-sm">
+                    Rebo Hemat dengan McDelivery
+                  </h3>
+                  <p class="text-xs text-gray-600 mt-1 flex items-center">
+                    <i
+                      class="fa-regular fa-calendar-days mr-2 text-red-500"
+                    ></i>
+                    Berlaku hingga 28 May 2025
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+            <a href="">
+              <div
+                class="snap-start shrink-0 w-[360px] rounded-lg shadow-md bg-white"
+              >
+                <img
+                  src="img/1325614.jpeg"
+                  alt="Promo BCA"
+                  class="w-full h-[200px] object-cover rounded-t-lg"
+                />
+                <div class="p-3">
+                  <h3 class="font-bold text-sm">BCA Hemat 25% Setiap Hari</h3>
+                  <p class="text-xs text-gray-600 mt-1 flex items-center">
+                    <i
+                      class="fa-regular fa-calendar-days mr-2 text-red-500"
+                    ></i>
+                    Berlaku hingga 30 June 2025
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div
+                class="snap-start shrink-0 w-[360px] rounded-lg shadow-md bg-white"
+              >
+                <img
+                  src="img/1325614.jpeg"
+                  alt="Dinosaur"
+                  class="w-full h-[200px] object-cover rounded-t-lg"
+                />
+                <div class="p-3">
+                  <h3 class="font-bold text-sm">Dinosaur McFlurry</h3>
+                  <p class="text-xs text-gray-600 mt-1 flex items-center">
+                    <i
+                      class="fa-regular fa-calendar-days mr-2 text-red-500"
+                    ></i>
+                    Berlaku hingga 01 June 2025
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div
+                class="snap-start shrink-0 w-[360px] rounded-lg shadow-md bg-white"
+              >
+                <img
+                  src="img/1325614.jpeg"
+                  alt="McDelivery"
+                  class="w-full h-[200px] object-cover rounded-t-lg"
+                />
+                <div class="p-3">
+                  <h3 class="font-bold text-sm">
+                    Rebo Hemat dengan McDelivery
+                  </h3>
+                  <p class="text-xs text-gray-600 mt-1 flex items-center">
+                    <i
+                      class="fa-regular fa-calendar-days mr-2 text-red-500"
+                    ></i>
+                    Berlaku hingga 28 May 2025
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="text-center mt-8">
+
+        <!-- Button -->
+        <div class="text-center mt-4">
           <button
             class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700"
           >
             Lihat Semua Promo
           </button>
         </div>
-      </section>
+      </div>
+
+      <div class="py-16 bg-gray-100">
+        <h1 class="lg:text-[2.5em] text-[1.4em] font-bold text-center mb-10">
+          Menu Favorit
+        </h1>
+
+        <!-- Slider Wrapper -->
+        <div class="overflow-hidden">
+          <!-- Scrollable Slider -->
+          <div
+            id="menuSlider"
+            class="flex gap-12 overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-6 pl-8 sm:pl-12 md:pl-24 lg:pl-[calc((100vw-1024px)/1)] pr-12 sm:pr-12 md:pr-24 lg:pr-[calc((100vw-1024px)/1)] mx-auto"
+            style="scrollbar-width: none"
+          >
+            <style>
+              #menuSlider::-webkit-scrollbar {
+                display: none; /* Chrome, Safari */
+              }
+            </style>
+
+            <!-- Item -->
+            <div class="snap-center shrink-0 text-center w-[240px]">
+              <img src="img/i.jpg" alt="Big Mac" class="w-full mx-auto" />
+              <p class="font-bold">Big Mac®</p>
+            </div>
+
+            <div class="snap-center shrink-0 text-center w-[240px]">
+              <img src="img/i.jpg" alt="PaNas 1" class="w-full mx-auto" />
+              <p class="font-bold">PaNas 1</p>
+            </div>
+
+            <div class="snap-center shrink-0 text-center w-[240px]">
+              <img src="img/i.jpg" alt="PaNas Spesial" class="w-full mx-auto" />
+              <p class="font-bold">PaNas Spesial</p>
+            </div>
+
+            <div class="snap-center shrink-0 text-center w-[240px]">
+              <img src="img/i.jpg" alt="McChicken" class="w-full mx-auto" />
+              <p class="font-bold">McChicken</p>
+            </div>
+
+            <div class="snap-center shrink-0 text-center w-[240px]">
+              <img src="img/i.jpg" alt="McNuggets" class="w-full mx-auto" />
+              <p class="font-bold">McNuggets®</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="text-center mt-8">
+          <button
+            class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700"
+          >
+            Lihat Semua Menu
+          </button>
+        </div>
+      </div>
+
+      <!-- Snap script -->
+      <script>
+        const slider = document.getElementById("menuSlider");
+        slider.addEventListener("touchend", () => {
+          const cardWidth = 240 + 24;
+          const scrollLeft = slider.scrollLeft;
+          const index = Math.round(scrollLeft / cardWidth);
+          slider.scrollTo({
+            left: index * cardWidth,
+            behavior: "smooth",
+          });
+        });
+      </script>
     </main>
 
     <script
